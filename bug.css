@@ -1,0 +1,5 @@
+The CSS property `content` can sometimes lead to unexpected behavior or errors if not used carefully.  For example, using `content` with `::before` or `::after` pseudo-elements without specifying a value may lead to unexpected results or inconsistencies across browsers.
+
+Another potential issue is related to specificity when using generated content.  If specificity conflicts arise between selectors targeting the generated content and other elements, it might lead to unpredictable styling.
+
+Incorrectly using `attr()` function within the `content` property, particularly with complex attributes or non-existent attributes can trigger errors or unwanted rendering issues.
