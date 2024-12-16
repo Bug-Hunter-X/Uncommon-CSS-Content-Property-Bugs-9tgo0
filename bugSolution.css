@@ -1,0 +1,28 @@
+/* bugSolution.css */
+
+/* Addressing unexpected behavior with pseudo-elements: always provide a value for content */
+.example::before {
+  content: "Example Text"; /* Clear and specific value */
+}
+
+/* Addressing specificity issues: use more specific selectors to avoid conflicts */
+.specific-example::before {
+  content: "Specific Example";
+}
+
+/* Addressing incorrect use of attr(): handle potential errors and non-existent attributes */
+.attribute-example {
+  content: attr(data-example, ''); /* Fallback to empty string if attribute not found */
+}
+
+/* Robust handling of attributes:
+  Use a conditional statement to check for attribute existence before using attr() */
+.robust-attribute-example:has([data-another-example])::before{
+    content: attr(data-another-example);
+}
+
+/* Or handle null values with conditional styling:
+  if an attribute is null then a null value is represented as an empty string. */
+.robust-attribute-example::before{
+    content: attr(data-another-example) || '';
+} 
